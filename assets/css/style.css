@@ -1,0 +1,303 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body, input {
+	font-family: "Myriad Pro", sans-serif;
+	font-size: .9rem;
+}
+
+main {
+	height: 80vh;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+}
+
+.brand {
+	text-align: center;
+	font-size: .8rem;
+	position: relative;
+	top: -40px;
+}
+
+.box {
+	width: 350px;
+	max-width: 350px;
+	padding: 20px 25px;
+	border-radius: 10px;
+	background-color: #DADADA;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+label {
+	font-weight: 550;
+	font-size: .8rem;
+	
+}
+
+input,
+button,
+select {
+	width:  100%;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 10px;
+	outline: none;
+	transition: .15s ease-in-out;
+}
+
+input,
+select {
+	margin-bottom: 10px;
+	margin-top: 2px;
+	border: 1px solid white;	
+}
+
+input:focus,
+select:focus {
+	border: 1px solid #282828;
+}
+
+button {
+	color: white;
+	background-color: #282828;
+	cursor: pointer;
+}
+
+button:hover,
+.header-estoque:hover button,
+.header-cadastro-produto:hover button {
+	background-color: #181818;
+	color: #DADADA;
+}
+
+footer {
+	text-align: center;
+	line-height: 5rem;
+	height: 10vh;
+	width: 100%;
+	font-size: .8rem;
+	font-style: italic;
+}
+
+/* Estoque */
+
+.estoque main {
+	padding: 50px;
+	grid-template-columns: 1fr;
+	width: 100%;
+}
+
+table {
+	background-color: #FFF;
+	border-radius: 10px;
+	border-collapse: collapse;
+	overflow-x: scroll;
+}
+
+table,
+thead,
+tbody {
+	display: block;
+}
+
+thead,
+tbody {
+	width: 100%;
+	cursor: pointer;
+}
+
+thead tr,
+tbody tr {
+	display: flex;
+	border-bottom: 1px solid #DADADA;
+}
+
+tbody tr:nth-child(odd) {
+	background: rgba(230, 230, 230, .5);
+}
+
+tbody tr:hover {
+	background: rgba(230, 230, 230, 1);
+}
+
+thead tr th,
+tbody tr td {
+	flex: 1;
+	padding: 20px 0;
+}
+
+tbody {
+	height: 50vh;
+}
+
+.container {
+	padding: 50px 100px;
+}
+
+.screen {
+	border-radius: 10px;
+	background: #DADADA;
+	height: 100%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.navigation {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.header button {
+	font-size: 1.2em;
+	padding: 20px 0;
+}
+
+.header-cadastro-produto button,
+.header-estoque button {
+	border: 1px solid #282828;
+	font-weight: 550;
+	color: #282828;
+	background: #DADADA;
+}
+
+.header-cadastro-produto button {
+	border-radius: 10px 0 0 0;
+}
+
+.header-estoque button {
+	border-radius: 0 10px 0 0;
+}
+
+button.active{
+	background: #282828;
+	color: #DADADA;
+}
+
+
+
+/*Cadastro de Produtos*/
+
+.cadastro-produto section {
+	padding: 50px 0;
+	height: 85%;
+}
+
+.cadastro-produto main {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	height: 100%;
+}
+
+form {
+	padding: 0 50px;
+}
+
+.container-lista-produtos {
+	display: grid;
+	justify-content: center;
+	padding: 0 50px;
+}
+
+.lista-produtos {
+	width: 100%;
+	max-width: 700px;
+	border-radius: 10px;
+	background-color: #FFF;
+}
+
+.lista-produtos ul {
+	width: 330px;
+	height: 300px;
+	list-style: none;
+	overflow-y: scroll;
+	cursor: default;
+}
+
+.lista-produtos ul li {
+	padding: 10px 15px;
+
+}
+
+/*******Medias******/
+
+@media (max-width: 900px) {
+	.container {
+		padding: 30px;
+	}
+
+	/*Cadastro-Produto*/
+	.cadastro-produto main {
+		grid-template-columns: 1fr;
+	}
+
+	.container-lista-produtos {
+		margin-top: 50px;
+	}
+
+	.lista-produtos ul {
+		width: 450px;
+	}
+
+}
+
+
+@media (max-width: 650px) {
+
+	.container,
+	.estoque,
+	.cadastro-produto,
+	.cadastro-produto form,
+	.container-lista-produtos {
+		padding: 0;
+	}
+
+	.estoque main {
+		padding: 30px;
+	}
+
+	.screen {
+		box-shadow: none;
+	}
+
+	tbody {
+		height: 100vh;
+	}
+
+	tbody,
+	thead {
+		width: 100vw;
+	}
+
+	input,
+	button,
+	select,
+	.header-cadastro-produto button,
+	.header-estoque button{
+		border-radius: 0;
+	}
+}
+
+@media (max-width: 500px) {
+	.lista-produtos ul {
+		width: 350px;
+	}
+}
+
+@media (max-width: 400px) {
+	.lista-produtos ul {
+		width: 250px;
+	}
+
+	.box {
+		width: 100%;
+	}
+}
