@@ -2,31 +2,22 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-  	<title>Estoque - softStock</title>
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	<link rel="stylesheet" href="./assets/css/style.css">
-  </head>
+
+  <?php
+    $pagina = 'Estoque';
+    require('backend/interface/carregaHead.php');
+  ?>
+
   <body class="estoque">
 
     <div class="container">
-
       <div class="screen">
         
-        <header class="header">
-          <div class="navigation">
-            <div class="header-cadastro-produto">
-              <button>cadastro de produtos</button>
-            </div>
-            <div class="header-estoque">
-              <button class="active">estoque</button>
-            </div>
-          </div>
-        </header>
+        <?php require('backend/interface/carregaHeader.php') ?>
 
         <section>
           <main>
+
             <table>
               <thead>
                 <tr>
@@ -37,7 +28,9 @@
                   <th>Validade</th>
                 </tr>
               </thead>
+
               <tbody>
+
                 <?php foreach ($_SESSION['produtos'] as $produto)  { ?>
                   <tr>
                     <td><?= $produto['cod_produto'] ?></td>
@@ -47,19 +40,19 @@
                     <td><?= $produto['validade'] ?></td>
                   </tr>
                 <?php } ?>
+
               </tbody>
-              <tfoot>
-                
-              </tfoot>
             </table>
+
           </main>
         </section>
+
       </div>
     </div>
-    <footer>
-      SoftStock 2021
-    </footer>
+
+    <?php require('backend/interface/carregaFooter.php') ?>
 
   	<script src="./assets/js/estoque.js"></script>
+    
   </body>
 </html>

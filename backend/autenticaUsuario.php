@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 $loginCliente = $_POST['login'];
 $senhaCliente = $_POST['senha'];
@@ -22,7 +23,6 @@ try {
 		header('Location: ../index.php');
 		$_SESSION['falhouLogin'] = true;
 	}
-
 
 } catch (PDOException $e) {
 	echo "Erro: " . $e->getMessage();

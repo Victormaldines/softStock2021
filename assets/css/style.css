@@ -79,6 +79,10 @@ button:hover,
 	color: #DADADA;
 }
 
+.aviso-usuario {
+	color: tomato;
+}
+
 footer {
 	text-align: center;
 	line-height: 5rem;
@@ -86,6 +90,18 @@ footer {
 	width: 100%;
 	font-size: .8rem;
 	font-style: italic;
+}
+
+.aviso {
+	display: inline-block;
+	padding: 5px 10px;
+	border-radius: 5px;
+	border: 1px solid white;
+}
+
+.warning {
+	background: rgba(171, 147, 65, .5);
+	border-color: rgba(171, 147, 65, .2);
 }
 
 /* Estoque */
