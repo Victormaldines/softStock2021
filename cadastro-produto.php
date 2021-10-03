@@ -1,4 +1,6 @@
-<?php require('backend/verificaAutenticacao.php') ?>
+<?php require('backend/verificaAutenticacao.php');
+  $_SESSION['msgUsuario']['visivel'] = !empty($_SESSION['msgUsuario']['visivel']) ? true : false;
+?>
 
 <!DOCTYPE html>
 <html>
@@ -18,7 +20,20 @@
         <section>
           <main>
 
-            <div> 
+            <div>
+
+              <?php
+                if ($_SESSION['msgUsuario']['visivel']) {
+              ?>
+
+                <span class="<?= $_SESSION['msgUsuario']['classe'] ?>">
+                  <?= $_SESSION['msgUsuario']['mensagem'] ?>
+                </span>
+
+              <?php 
+                  $_SESSION['msgUsuario']['visivel'] = false;
+                }
+              ?>
               
               <form method="POST" action="backend/cadastraProduto.php">
                 <div>

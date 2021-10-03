@@ -94,7 +94,8 @@ footer {
 
 .aviso {
 	display: inline-block;
-	padding: 5px 10px;
+	padding: 10px 15px;
+	width: 80%;
 	border-radius: 5px;
 	border: 1px solid white;
 }
@@ -102,6 +103,11 @@ footer {
 .warning {
 	background: rgba(171, 147, 65, .5);
 	border-color: rgba(171, 147, 65, .2);
+}
+
+.success {
+	background: rgba(56, 183, 113, .5);
+	border-color: rgba(56, 183, 113, .2);
 }
 
 /* Estoque */
@@ -195,6 +201,11 @@ tbody {
 button.active{
 	background: #282828;
 	color: #DADADA;
+}
+
+button.btn-del-produto {
+	width: 40px;
+	opacity: .95;
 }
 
 

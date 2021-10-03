@@ -26,6 +26,7 @@
                   <th>Tipo</th>
                   <th>Quantidade</th>
                   <th>Validade</th>
+                  <th></th>
                 </tr>
               </thead>
 
@@ -33,11 +34,12 @@
 
                 <?php foreach ($_SESSION['produtos'] as $produto)  { ?>
                   <tr>
-                    <td><?= $produto['cod_produto'] ?></td>
+                    <td id="<?= $produto['cod_produto'] ?>"><?= $produto['cod_produto'] ?></td>
                     <td><?= $produto['nome'] ?></td>
                     <td><?= $produto['tipo'] ?></td>
                     <td><?= $produto['quantidade'] ?></td>
                     <td><?= $produto['validade'] ?></td>
+                    <td><button class="fas fa-times btn-del-produto"></button></td>
                   </tr>
                 <?php } ?>
 

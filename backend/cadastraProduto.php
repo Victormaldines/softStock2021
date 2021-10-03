@@ -20,7 +20,7 @@ try {
 		$stmt->execute(array('nome' => $nome, 'tipo' => $tipo, 'quantidade' => $quantidade, 'validade' => $validade));
 	}
 	
-	header('Location: ../cadastro-produto.php');
+	header('Location: interface/carregaAvisoUsuario.php?tipoMsg=cadastroSucesso');
 } catch (PDOException $e) {
 	echo 'Erro: ' . $e->getMessage();
 }

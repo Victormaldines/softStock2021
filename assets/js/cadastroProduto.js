@@ -10,14 +10,15 @@ btnEstoque.addEventListener('click', e => {
 
 form.addEventListener('submit', e => {
 	const produto = pegarDadosDosInputs();
-	armazenarLocalStorage(produto);
-	incluirProdutoNaLista(produto);
-
+	
 	if (!produto) {
 		e.preventDefault();
+		location.href = 'backend/interface/carregaAvisoUsuario.php?tipoMsg=campoVazio';
 		return;
 	};
 	
+	armazenarLocalStorage(produto);
+	incluirProdutoNaLista(produto);	
 });
 
 function pegarDadosDosInputs() {
@@ -33,10 +34,7 @@ function pegarDadosDosInputs() {
 		validade: validadeProduto.value
 	};
 
-	if (validaCampos(produto)) {
-		alert('Preencha todos os campos');
-		return false;
-	};
+	if (validaCampos(produto)) return false;
 	return produto;
 }
 
